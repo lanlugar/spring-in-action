@@ -1,4 +1,4 @@
-package sia.tacocloud;
+package sia.tacocloud.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import sia.tacocloud.Ingredient;
 import sia.tacocloud.Ingredient.Type;
+import sia.tacocloud.Taco;
+import sia.tacocloud.TacoOrder;
 import sia.tacocloud.data.IngredientRepository;
 
 import javax.validation.Valid;
@@ -29,6 +32,8 @@ public class DesignTacoController {
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
         Iterable<Ingredient> ingredients = ingredientRepo.findAll();
+
+        log.info("ingredients found {}", ingredients);
 
         Type[] types = Ingredient.Type.values();
         for (Type type : types) {
