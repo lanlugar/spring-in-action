@@ -4,5 +4,4 @@ import org.springframework.data.repository.CrudRepository;
 import sia.tacocloud.TacoOrder;
 
 public interface OrderRepository extends CrudRepository<TacoOrder, Long> {
-    public TacoOrder save(TacoOrder tacoOrder);
 }

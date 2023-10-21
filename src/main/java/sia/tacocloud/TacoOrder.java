@@ -2,18 +2,19 @@ package sia.tacocloud;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
-public class TacoOrder implements Serializable {
+public class TacoOrder{
     private static final long serialVersionUID = 1L;
+    @Id
     private Long id;
     private Date placedAt = new Date();
     @NotBlank(message = "Delivery name is required")

@@ -1,11 +1,11 @@
 package sia.tacocloud;
 
 import lombok.Data;
-
-import java.io.Serializable;
+import org.springframework.data.annotation.Id;
 
 @Data
-public class Ingredient implements Serializable {
+public class Ingredient {
+    @Id
     private final String id;
     private final String name;
     private final Type type;

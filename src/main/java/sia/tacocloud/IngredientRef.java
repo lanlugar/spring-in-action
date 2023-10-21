@@ -2,9 +2,7 @@ package sia.tacocloud;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class IngredientRef implements Serializable {
+public class IngredientRef {
     private final String ingredient;
 }
