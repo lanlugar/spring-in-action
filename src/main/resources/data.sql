@@ -2,7 +2,7 @@ delete from Ingredient_Ref;
 delete from Taco;
 delete from Taco_Order;
 delete from Ingredient;
-insert into Ingredient (id, name, type)
+insert into INGREDIENT (ID, NAME, TYPE)
 values ('FLTO', 'Flour Tortilla', 'WRAP');
 insert into Ingredient (id, name, type)
 values ('COTO', 'Corn Tortilla', 'WRAP');
