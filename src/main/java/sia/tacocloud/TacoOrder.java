@@ -2,6 +2,7 @@ package sia.tacocloud;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import sia.tacocloud.security.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
@@ -39,6 +40,9 @@ public class TacoOrder implements Serializable {
     private String ccCVV;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
+
+    @ManyToOne
+    private User user;
 
 
     public void addTaco(Taco taco) {
